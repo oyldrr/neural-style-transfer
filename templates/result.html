@@ -69,23 +69,24 @@
             box-shadow: 1px -1px 15px rgba(11, 162, 3, 0.5);
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Stilist</h1>
+    <h1 data-aos="fade-up">Stilist</h1>
     <div class="image-container">
-        <div>
+        <div data-aos="fade-up" data-aos-delay="100">
             <h3>İçerik Görseli (Content)</h3>
             <img src="{{ url_for('static', filename='uploads/' + folder_name + '/' + content_image) }}"
                 alt="Content Image">
         </div>
         <div class="symbol">+</div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="200">
             <h3>Stil Görseli (Style)</h3>
             <img src="{{ url_for('static', filename='uploads/' + folder_name + '/' + style_image) }}" alt="Style Image">
         </div>
         <div class="symbol">=</div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="300">
             <h3>Oluşturulan Görsel (Generated)</h3>
             <img src="{{ url_for('static', filename='uploads/' + folder_name + '/' + generated_image) }}"
                 alt="Generated Image">
@@ -94,14 +95,22 @@
 
     <!-- İndirme Butonu -->
     <a href="{{ url_for('static', filename='uploads/' + folder_name + '/' + generated_image) }}"
-        download="generated_image.jpg">
+        download="generated_image.jpg" data-aos="flip-up" data-aos-delay="400">
         <button class="download-button">Oluşturulan Görseli İndir</button>
     </a>
 
     <!-- Yeni görsel oluştur butonu -->
-    <a href="{{ url_for('index') }}">
+    <a href="{{ url_for('index') }}" data-aos="flip-up" data-aos-delay="500">
         <button class="download-button">Yeni Görsel Oluştur</button>
     </a>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+        });
+    </script>
 </body>
 
 </html>

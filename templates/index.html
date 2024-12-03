@@ -31,6 +31,7 @@
             width: 100vw;
             height: 100vh;
             background-color: rgba(255, 255, 255, 0.718);
+            z-index: 101;
         }
 
         .loader-wrapper img {
@@ -79,21 +80,25 @@
             box-shadow: 1px -1px 15px rgba(11, 162, 3, 0.5);
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Stilist</h1>
+    <h1 data-aos="fade-up" data-aos-delay="100">Stilist</h1>
     <div class="loader-wrapper">
         <img src="static/images/loader.gif" alt="loading...">
     </div>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <label for="content">İçerik Görseli (Content):</label>
-        <input type="file" id="content" name="content" accept="image/*" required><br>
+    <form action="/upload" method="POST" enctype="multipart/form-data" data-aos="fade-up">
+        <label data-aos="flip-up" data-aos-delay="200" for="content">İçerik Görseli (Content):</label>
+        <input data-aos="flip-up" data-aos-delay="300" type="file" id="content" name="content" accept="image/*"
+            required><br>
 
-        <label for="style">Stil Görseli (Style):</label>
-        <input type="file" id="style" name="style" accept="image/*" required><br>
+        <label data-aos="flip-up" data-aos-delay="200" for="style">Stil Görseli (Style):</label>
+        <input data-aos="flip-up" data-aos-delay="300" type="file" id="style" name="style" accept="image/*"
+            required><br>
 
-        <input onclick="submitted()" type="submit" value="Stil Transferini Başlat">
+        <input data-aos="flip-up" data-aos-delay="400" onclick="submitted()" type="submit"
+            value="Stil Transferini Başlat">
     </form>
 
     <script>
@@ -105,6 +110,12 @@
             }
 
         }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+        });
     </script>
 </body>
 
